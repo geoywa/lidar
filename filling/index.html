@@ -1,0 +1,1420 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://lidar.github.org/filling/">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+    
+    
+      
+        <title>filling module - lidar</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#filling-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://lidar.github.org" title="lidar" class="md-header__button md-logo" aria-label="lidar">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lidar
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              filling module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/giswqs/lidar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://lidar.github.org" title="lidar" class="md-nav__button md-logo" aria-label="lidar">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    lidar
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/giswqs/lidar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-started/" class="md-nav__link">
+        Get Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citations/" class="md-nav__link">
+        Citations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/giswqs/lidar/issues" class="md-nav__link">
+        Report Issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        API Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          filling module
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        filling module
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling" class="md-nav__link">
+    lidar.filling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.Depression" class="md-nav__link">
+    Depression
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.ExtractSinks" class="md-nav__link">
+    ExtractSinks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.get_dep_props" class="md-nav__link">
+    get_dep_props()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.np2rdarray" class="md-nav__link">
+    np2rdarray()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.polygonize" class="md-nav__link">
+    polygonize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.regionGroup" class="md-nav__link">
+    regionGroup()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.write_dep_csv" class="md-nav__link">
+    write_dep_csv()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filtering/" class="md-nav__link">
+        filtering module
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mounts/" class="md-nav__link">
+        mounts module
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slicing/" class="md-nav__link">
+        slicing module
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utilities/" class="md-nav__link">
+        utilities module
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling" class="md-nav__link">
+    lidar.filling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.Depression" class="md-nav__link">
+    Depression
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.ExtractSinks" class="md-nav__link">
+    ExtractSinks()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.get_dep_props" class="md-nav__link">
+    get_dep_props()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.np2rdarray" class="md-nav__link">
+    np2rdarray()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.polygonize" class="md-nav__link">
+    polygonize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.regionGroup" class="md-nav__link">
+    regionGroup()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.filling.write_dep_csv" class="md-nav__link">
+    write_dep_csv()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+
+                
+                  <a href="https://github.com/giswqs/lidar/edit/master/docs/filling.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="filling-module">filling module<a class="headerlink" href="#filling-module" title="Permanent link">&para;</a></h1>
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="lidar.filling"></a>
+    <div class="doc doc-contents first">
+
+      <p>Module for filling surface depressions.</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="lidar.filling.Depression" class="doc doc-heading">
+        <code>Depression</code>
+
+
+
+<a href="#lidar.filling.Depression" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The class for storing depression info.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.filling.ExtractSinks" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ExtractSinks</span><span class="p">(</span><span class="n">in_dem</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">)</span></code>
+
+
+<a href="#lidar.filling.ExtractSinks" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Extract sinks (e.g., maximum depression extent) from a DEM.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>in_dem</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the input DEM.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_size</code></td>
+        <td><code>int</code></td>
+        <td><p>The minimum number of pixels to be considered as a sink.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the output directory.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>object</code></td>
+      <td><p>The richDEM array containing sinks.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/filling.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ExtractSinks</span><span class="p">(</span><span class="n">in_dem</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extract sinks (e.g., maximum depression extent) from a DEM.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        in_dem (str): File path to the input DEM.</span>
+<span class="sd">        min_size (int): The minimum number of pixels to be considered as a sink.</span>
+<span class="sd">        out_dir (str): File path to the output directory.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        object: The richDEM array containing sinks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="n">out_dem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;dem.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_dem_filled</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;dem_filled.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_dem_diff</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;dem_diff.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_sink</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;sink.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_region</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;region.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_depth</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;depth.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_csv_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;regions_info.csv&quot;</span><span class="p">)</span>
+    <span class="n">out_vec_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;regions.shp&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create output folder if nonexistent</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+
+    <span class="c1"># load the dem and get dem info</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading data ...&quot;</span><span class="p">)</span>
+    <span class="n">dem</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">LoadGDAL</span><span class="p">(</span><span class="n">in_dem</span><span class="p">)</span>
+    <span class="n">no_data</span> <span class="o">=</span> <span class="n">dem</span><span class="o">.</span><span class="n">no_data</span>
+    <span class="n">projection</span> <span class="o">=</span> <span class="n">dem</span><span class="o">.</span><span class="n">projection</span>
+    <span class="n">geotransform</span> <span class="o">=</span> <span class="n">dem</span><span class="o">.</span><span class="n">geotransform</span>
+    <span class="n">cell_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">geotransform</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># get min and max elevation of the dem</span>
+    <span class="n">max_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">dem</span><span class="p">))</span>
+    <span class="n">min_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">dem</span><span class="p">[</span><span class="n">dem</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;min = </span><span class="si">{:.2f}</span><span class="s2">, max = </span><span class="si">{:.2f}</span><span class="s2">, no_data = </span><span class="si">{}</span><span class="s2">, cell_size = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">min_elev</span><span class="p">,</span> <span class="n">max_elev</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">cell_size</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># depression filling</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Depression filling ...&quot;</span><span class="p">)</span>
+    <span class="n">dem_filled</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">FillDepressions</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">dem_diff</span> <span class="o">=</span> <span class="n">dem_filled</span> <span class="o">-</span> <span class="n">dem</span>
+    <span class="n">dem_diff</span><span class="o">.</span><span class="n">no_data</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saving filled dem ...&quot;</span><span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_dem_filled</span><span class="p">,</span> <span class="n">dem_filled</span><span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_dem_diff</span><span class="p">,</span> <span class="n">dem_diff</span><span class="p">)</span>
+
+    <span class="c1"># nb_labels is the total number of objects. 0 represents background object.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Region grouping ...&quot;</span><span class="p">)</span>
+    <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span> <span class="o">=</span> <span class="n">regionGroup</span><span class="p">(</span><span class="n">dem_diff</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">)</span>
+    <span class="n">dem_diff</span><span class="p">[</span><span class="n">label_objects</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">depth</span> <span class="o">=</span> <span class="n">np2rdarray</span><span class="p">(</span>
+        <span class="n">dem_diff</span><span class="p">,</span> <span class="n">no_data</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="o">=</span><span class="n">geotransform</span>
+    <span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_depth</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">dem_diff</span><span class="p">,</span> <span class="n">depth</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computing properties ...&quot;</span><span class="p">)</span>
+    <span class="c1"># objects = measure.regionprops(label_objects, dem, coordinates=&#39;xy&#39;)</span>
+    <span class="n">objects</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">regionprops</span><span class="p">(</span><span class="n">label_objects</span><span class="p">,</span> <span class="n">dem</span><span class="p">)</span>
+    <span class="n">dep_list</span> <span class="o">=</span> <span class="n">get_dep_props</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">)</span>
+    <span class="n">write_dep_csv</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">out_csv_file</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">objects</span><span class="p">,</span> <span class="n">dep_list</span>
+
+    <span class="c1"># convert numpy to richdem data format</span>
+    <span class="n">region</span> <span class="o">=</span> <span class="n">np2rdarray</span><span class="p">(</span>
+        <span class="n">label_objects</span><span class="p">,</span> <span class="n">no_data</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="o">=</span><span class="n">geotransform</span>
+    <span class="p">)</span>
+    <span class="k">del</span> <span class="n">label_objects</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saving sink dem ...&quot;</span><span class="p">)</span>
+    <span class="n">sink</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+    <span class="n">sink</span><span class="p">[</span><span class="n">region</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">sink</span> <span class="o">=</span> <span class="n">np2rdarray</span><span class="p">(</span><span class="n">sink</span><span class="p">,</span> <span class="n">no_data</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_sink</span><span class="p">,</span> <span class="n">sink</span><span class="p">)</span>
+    <span class="c1"># del sink</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saving refined dem ...&quot;</span><span class="p">)</span>
+    <span class="n">dem_refined</span> <span class="o">=</span> <span class="n">dem_filled</span>
+    <span class="n">dem_refined</span><span class="p">[</span><span class="n">region</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">dem</span><span class="p">[</span><span class="n">region</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">dem_refined</span> <span class="o">=</span> <span class="n">np2rdarray</span><span class="p">(</span>
+        <span class="n">dem_refined</span><span class="p">,</span> <span class="n">no_data</span><span class="o">=</span><span class="n">no_data</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="o">=</span><span class="n">geotransform</span>
+    <span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_dem</span><span class="p">,</span> <span class="n">dem_refined</span><span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_region</span><span class="p">,</span> <span class="n">region</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">dem_refined</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">dem</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Converting raster to vector ...&quot;</span><span class="p">)</span>
+    <span class="n">polygonize</span><span class="p">(</span><span class="n">out_region</span><span class="p">,</span> <span class="n">out_vec_file</span><span class="p">)</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total run time:</span><span class="se">\t\t\t</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2"> s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">out_sink</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.filling.get_dep_props" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_dep_props</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span></code>
+
+
+<a href="#lidar.filling.get_dep_props" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Computes depression attributes.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>objects</code></td>
+        <td><code>object</code></td>
+        <td><p>The labeled objects.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>resolution</code></td>
+        <td><code>float</code></td>
+        <td><p>The spatial reoslution of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>list</code></td>
+      <td><p>A list of depression objects with attributes.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/filling.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_dep_props</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Computes depression attributes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        objects (object): The labeled objects.</span>
+<span class="sd">        resolution (float): The spatial reoslution of the image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list of depression objects with attributes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dep_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">:</span>
+        <span class="n">unique_id</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">label</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">area</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">count</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># depression size</span>
+        <span class="n">min_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">min_intensity</span><span class="p">)</span>  <span class="c1"># depression min elevation</span>
+        <span class="n">max_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span><span class="p">)</span>  <span class="c1"># depression max elevation</span>
+        <span class="n">max_depth</span> <span class="o">=</span> <span class="n">max_elev</span> <span class="o">-</span> <span class="n">min_elev</span>  <span class="c1"># depression max depth</span>
+        <span class="n">mean_depth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">max_elev</span> <span class="o">*</span> <span class="n">count</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">intensity_image</span><span class="p">))</span> <span class="o">/</span> <span class="n">count</span>
+        <span class="p">)</span>  <span class="c1"># depression mean depth</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="n">mean_depth</span> <span class="o">*</span> <span class="n">count</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># depression volume</span>
+        <span class="n">perimeter</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">perimeter</span> <span class="o">*</span> <span class="n">resolution</span>
+        <span class="n">major_axis</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">major_axis_length</span> <span class="o">*</span> <span class="n">resolution</span>
+        <span class="n">minor_axis</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">minor_axis_length</span> <span class="o">*</span> <span class="n">resolution</span>
+        <span class="k">if</span> <span class="n">minor_axis</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">minor_axis</span> <span class="o">=</span> <span class="n">resolution</span>
+        <span class="n">elongatedness</span> <span class="o">=</span> <span class="n">major_axis</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">minor_axis</span>
+        <span class="n">eccentricity</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">eccentricity</span>
+        <span class="n">orientation</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">orientation</span> <span class="o">/</span> <span class="mf">3.1415</span> <span class="o">*</span> <span class="mi">180</span>
+        <span class="n">area_bbox_ratio</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">extent</span>
+
+        <span class="n">dep_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">Depression</span><span class="p">(</span>
+                <span class="n">unique_id</span><span class="p">,</span>
+                <span class="n">count</span><span class="p">,</span>
+                <span class="n">size</span><span class="p">,</span>
+                <span class="n">volume</span><span class="p">,</span>
+                <span class="n">mean_depth</span><span class="p">,</span>
+                <span class="n">max_depth</span><span class="p">,</span>
+                <span class="n">min_elev</span><span class="p">,</span>
+                <span class="n">max_elev</span><span class="p">,</span>
+                <span class="n">perimeter</span><span class="p">,</span>
+                <span class="n">major_axis</span><span class="p">,</span>
+                <span class="n">minor_axis</span><span class="p">,</span>
+                <span class="n">elongatedness</span><span class="p">,</span>
+                <span class="n">eccentricity</span><span class="p">,</span>
+                <span class="n">orientation</span><span class="p">,</span>
+                <span class="n">area_bbox_ratio</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">dep_list</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.filling.np2rdarray" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">np2rdarray</span><span class="p">(</span><span class="n">in_array</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">)</span></code>
+
+
+<a href="#lidar.filling.np2rdarray" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Converts an numpy array to rdarray.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>in_array</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The input numpy array.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>no_data</code></td>
+        <td><code>float</code></td>
+        <td><p>The no_data value of the array.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>projection</code></td>
+        <td><code>str</code></td>
+        <td><p>The projection of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>geotransform</code></td>
+        <td><code>str</code></td>
+        <td><p>The geotransform of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>object</code></td>
+      <td><p>The richDEM array.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/filling.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">np2rdarray</span><span class="p">(</span><span class="n">in_array</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts an numpy array to rdarray.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        in_array (np.array): The input numpy array.</span>
+<span class="sd">        no_data (float): The no_data value of the array.</span>
+<span class="sd">        projection (str): The projection of the image.</span>
+<span class="sd">        geotransform (str): The geotransform of the image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        object: The richDEM array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">out_array</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">rdarray</span><span class="p">(</span><span class="n">in_array</span><span class="p">,</span> <span class="n">no_data</span><span class="o">=</span><span class="n">no_data</span><span class="p">)</span>
+    <span class="n">out_array</span><span class="o">.</span><span class="n">projection</span> <span class="o">=</span> <span class="n">projection</span>
+    <span class="n">out_array</span><span class="o">.</span><span class="n">geotransform</span> <span class="o">=</span> <span class="n">geotransform</span>
+    <span class="k">return</span> <span class="n">out_array</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.filling.polygonize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">polygonize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">shp_path</span><span class="p">)</span></code>
+
+
+<a href="#lidar.filling.polygonize" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Converts a raster image to vector.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the input image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>shp_path</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the output shapefile.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/filling.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">polygonize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">shp_path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts a raster image to vector.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img (str): File path to the input image.</span>
+<span class="sd">        shp_path (str): File path to the output shapefile.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># mapping between gdal type and ogr field type</span>
+    <span class="n">type_mapping</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_UInt16</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Int16</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_UInt32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Int32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CInt16</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CInt32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CFloat32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">,</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CFloat64</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">prj</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">()</span>
+    <span class="n">srcband</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">dst_layername</span> <span class="o">=</span> <span class="s2">&quot;Shape&quot;</span>
+    <span class="n">drv</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s2">&quot;ESRI Shapefile&quot;</span><span class="p">)</span>
+    <span class="n">dst_ds</span> <span class="o">=</span> <span class="n">drv</span><span class="o">.</span><span class="n">CreateDataSource</span><span class="p">(</span><span class="n">shp_path</span><span class="p">)</span>
+    <span class="n">srs</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="n">wkt</span><span class="o">=</span><span class="n">prj</span><span class="p">)</span>
+
+    <span class="n">dst_layer</span> <span class="o">=</span> <span class="n">dst_ds</span><span class="o">.</span><span class="n">CreateLayer</span><span class="p">(</span><span class="n">dst_layername</span><span class="p">,</span> <span class="n">srs</span><span class="o">=</span><span class="n">srs</span><span class="p">)</span>
+    <span class="c1"># raster_field = ogr.FieldDefn(&#39;id&#39;, type_mapping[srcband.DataType])</span>
+    <span class="n">raster_field</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">FieldDefn</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">type_mapping</span><span class="p">[</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Int32</span><span class="p">])</span>
+    <span class="n">dst_layer</span><span class="o">.</span><span class="n">CreateField</span><span class="p">(</span><span class="n">raster_field</span><span class="p">)</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">Polygonize</span><span class="p">(</span><span class="n">srcband</span><span class="p">,</span> <span class="n">srcband</span><span class="p">,</span> <span class="n">dst_layer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[],</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">img</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">srcband</span><span class="p">,</span> <span class="n">dst_ds</span><span class="p">,</span> <span class="n">dst_layer</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.filling.regionGroup" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">regionGroup</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">)</span></code>
+
+
+<a href="#lidar.filling.regionGroup" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>IdentifIies regions based on region growing method</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img_array</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_size</code></td>
+        <td><code>int</code></td>
+        <td><p>The minimum number of pixels to be considered as a depression.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>no_data</code></td>
+        <td><code>float</code></td>
+        <td><p>The no_data value of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>The labelled objects and total number of labels.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/filling.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">regionGroup</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;IdentifIies regions based on region growing method</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img_array (np.array): The numpy array containing the image.</span>
+<span class="sd">        min_size (int): The minimum number of pixels to be considered as a depression.</span>
+<span class="sd">        no_data (float): The no_data value of the image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: The labelled objects and total number of labels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">img_array</span><span class="p">[</span><span class="n">img_array</span> <span class="o">==</span> <span class="n">no_data</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">label_objects</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+    <span class="n">mask_sizes</span> <span class="o">=</span> <span class="n">sizes</span> <span class="o">&gt;</span> <span class="n">min_size</span>
+    <span class="n">mask_sizes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">image_cleaned</span> <span class="o">=</span> <span class="n">mask_sizes</span><span class="p">[</span><span class="n">label_objects</span><span class="p">]</span>
+    <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">image_cleaned</span><span class="p">)</span>
+    <span class="c1"># nb_labels is the total number of objects. 0 represents background object.</span>
+    <span class="k">return</span> <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.filling.write_dep_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">write_dep_csv</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">csv_file</span><span class="p">)</span></code>
+
+
+<a href="#lidar.filling.write_dep_csv" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Saves the depression list info to a CSV file.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>dep_list</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of depression objects with attributes.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>csv_file</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the output CSV file.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/filling.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">write_dep_csv</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">csv_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Saves the depression list info to a CSV file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dep_list (list): A list of depression objects with attributes.</span>
+<span class="sd">        csv_file (str): File path to the output CSV file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">csv</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;region-id&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;count&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;area&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;volume&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;avg-depth&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;max-depth&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;min-elev&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;max-elev&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;perimeter&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;major-axis&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;minor-axis&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;elongatedness&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;eccentricity&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;orientation&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+        <span class="o">+</span> <span class="s2">&quot;area-bbox-ratio&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">header</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="n">dep_list</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">, </span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">volume</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">meanDepth</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">maxDepth</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">minElev</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">bndElev</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">perimeter</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">major_axis</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">minor_axis</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">elongatedness</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">eccentricity</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">orientation</span><span class="p">,</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">area_bbox_ratio</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">csv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2021-03-02
+    
+  </small>
+</div>
+                  
+                
+              
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../changelog/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Changelog
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../filtering/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              filtering module
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      
+    
+  </body>
+</html>

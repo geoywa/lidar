@@ -1,0 +1,2589 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://lidar.github.org/slicing/">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+    
+    
+      
+        <title>slicing module - lidar</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#slicing-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://lidar.github.org" title="lidar" class="md-header__button md-logo" aria-label="lidar">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lidar
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              slicing module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/giswqs/lidar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://lidar.github.org" title="lidar" class="md-nav__button md-logo" aria-label="lidar">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    lidar
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/giswqs/lidar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-started/" class="md-nav__link">
+        Get Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citations/" class="md-nav__link">
+        Citations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/giswqs/lidar/issues" class="md-nav__link">
+        Report Issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        API Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filling/" class="md-nav__link">
+        filling module
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filtering/" class="md-nav__link">
+        filtering module
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mounts/" class="md-nav__link">
+        mounts module
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          slicing module
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        slicing module
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing" class="md-nav__link">
+    lidar.slicing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.Depression" class="md-nav__link">
+    Depression
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.DelineateDepressions" class="md-nav__link">
+    DelineateDepressions()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.extract_levels" class="md-nav__link">
+    extract_levels()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.get_image_paras" class="md-nav__link">
+    get_image_paras()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.get_min_max_nodata" class="md-nav__link">
+    get_min_max_nodata()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.getMetadata" class="md-nav__link">
+    getMetadata()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.img_to_shp" class="md-nav__link">
+    img_to_shp()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.levelSet" class="md-nav__link">
+    levelSet()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.np2rdarray" class="md-nav__link">
+    np2rdarray()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.obj_to_level" class="md-nav__link">
+    obj_to_level()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.polygonize" class="md-nav__link">
+    polygonize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.regionGroup" class="md-nav__link">
+    regionGroup()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.set_image_paras" class="md-nav__link">
+    set_image_paras()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.updateLevel" class="md-nav__link">
+    updateLevel()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.write_dep_csv" class="md-nav__link">
+    write_dep_csv()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.writeObject" class="md-nav__link">
+    writeObject()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.writeRaster" class="md-nav__link">
+    writeRaster()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utilities/" class="md-nav__link">
+        utilities module
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing" class="md-nav__link">
+    lidar.slicing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.Depression" class="md-nav__link">
+    Depression
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.DelineateDepressions" class="md-nav__link">
+    DelineateDepressions()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.extract_levels" class="md-nav__link">
+    extract_levels()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.get_image_paras" class="md-nav__link">
+    get_image_paras()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.get_min_max_nodata" class="md-nav__link">
+    get_min_max_nodata()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.getMetadata" class="md-nav__link">
+    getMetadata()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.img_to_shp" class="md-nav__link">
+    img_to_shp()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.levelSet" class="md-nav__link">
+    levelSet()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.np2rdarray" class="md-nav__link">
+    np2rdarray()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.obj_to_level" class="md-nav__link">
+    obj_to_level()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.polygonize" class="md-nav__link">
+    polygonize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.regionGroup" class="md-nav__link">
+    regionGroup()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.set_image_paras" class="md-nav__link">
+    set_image_paras()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.updateLevel" class="md-nav__link">
+    updateLevel()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.write_dep_csv" class="md-nav__link">
+    write_dep_csv()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.writeObject" class="md-nav__link">
+    writeObject()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidar.slicing.writeRaster" class="md-nav__link">
+    writeRaster()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+
+                
+                  <a href="https://github.com/giswqs/lidar/edit/master/docs/slicing.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="slicing-module">slicing module<a class="headerlink" href="#slicing-module" title="Permanent link">&para;</a></h1>
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="lidar.slicing"></a>
+    <div class="doc doc-contents first">
+
+      <p>Module for the level-set algorithm.</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="lidar.slicing.Depression" class="doc doc-heading">
+        <code>Depression</code>
+
+
+
+<a href="#lidar.slicing.Depression" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The class for storing depression info.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.DelineateDepressions" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">DelineateDepressions</span><span class="p">(</span><span class="n">in_sink</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">min_depth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">bool_level_shp</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.DelineateDepressions" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Delineates nested depressions.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>in_sink</code></td>
+        <td><code>str</code></td>
+        <td><p>The file path to the sink image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_size</code></td>
+        <td><code>int</code></td>
+        <td><p>The minimum number of pixels to be considered as a depression.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_depth</code></td>
+        <td><code>float</code></td>
+        <td><p>The minimum depth to be considered as a depression.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>interval</code></td>
+        <td><code>float</code></td>
+        <td><p>The slicing interval.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The file path to the output directory.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>bool_level_shp</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to generate shapefiles for each individual level. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>The output level image, and the output object image.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">DelineateDepressions</span><span class="p">(</span><span class="n">in_sink</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">min_depth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">bool_level_shp</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Delineates nested depressions.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        in_sink (str): The file path to the sink image.</span>
+<span class="sd">        min_size (int): The minimum number of pixels to be considered as a depression.</span>
+<span class="sd">        min_depth (float): The minimum depth to be considered as a depression.</span>
+<span class="sd">        interval (float): The slicing interval.</span>
+<span class="sd">        out_dir (str): The file path to the output directory.</span>
+<span class="sd">        bool_level_shp (bool, optional): Whether to generate shapefiles for each individual level. Defaults to False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: The output level image, and the output object image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># The following parameters can be used by default</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># convert slicing interval to negative value</span>
+
+    <span class="n">out_img_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;img-level&quot;</span><span class="p">)</span>
+    <span class="n">out_shp_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;shp-level&quot;</span><span class="p">)</span>
+    <span class="n">out_obj_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;depression_id.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_level_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;depression_level.tif&quot;</span><span class="p">)</span>
+    <span class="n">out_vec_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;depressions.shp&quot;</span><span class="p">)</span>
+    <span class="n">out_csv_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s2">&quot;depressions_info.csv&quot;</span><span class="p">)</span>
+
+    <span class="n">init_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="c1"># delete contents in output folder if existing</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_img_dir</span><span class="p">):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">out_img_dir</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">out_img_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_shp_dir</span><span class="p">):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">out_shp_dir</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">out_shp_dir</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reading data ...&quot;</span><span class="p">)</span>
+    <span class="n">read_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">LoadGDAL</span><span class="p">(</span><span class="n">in_sink</span><span class="p">)</span>
+    <span class="n">no_data_raw</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="n">getMetadata</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">rows_cols</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rows, cols: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rows_cols</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pixel resolution: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">resolution</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read data time: </span><span class="si">{:.4f}</span><span class="s2"> seconds&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">read_time</span><span class="p">))</span>
+
+    <span class="n">min_elev</span><span class="p">,</span> <span class="n">max_elev</span><span class="p">,</span> <span class="n">no_data</span> <span class="o">=</span> <span class="n">get_min_max_nodata</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>  <span class="c1"># set nodata value to a large value, e.g., 9999</span>
+    <span class="c1"># initialize output image</span>
+    <span class="n">obj_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># output depression image with unique id for each nested depression</span>
+    <span class="n">level_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># output depression level image</span>
+
+    <span class="c1"># nb_labels is the total number of objects. 0 represents background object.</span>
+    <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span> <span class="o">=</span> <span class="n">regionGroup</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">)</span>
+    <span class="c1"># regions = measure.regionprops(label_objects, image, coordinates=&#39;xy&#39;)</span>
+    <span class="n">regions</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">regionprops</span><span class="p">(</span><span class="n">label_objects</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">image</span>  <span class="c1"># delete the original image to save memory</span>
+    <span class="n">prep_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data preparation time: </span><span class="si">{:.4f}</span><span class="s2"> seconds&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prep_time</span> <span class="o">-</span> <span class="n">init_time</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of regions: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nb_labels</span><span class="p">))</span>
+
+    <span class="n">identify_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="n">obj_uid</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">global_dep_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># loop through regions and identify nested depressions in each region using level-set method</span>
+    <span class="k">for</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>  <span class="c1"># iterate through each depression region</span>
+        <span class="n">region_id</span> <span class="o">=</span> <span class="n">region</span><span class="o">.</span><span class="n">label</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">region</span><span class="o">.</span><span class="n">intensity_image</span>  <span class="c1"># dem subset for each region</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="n">region</span><span class="o">.</span><span class="n">bbox</span>
+
+        <span class="c1"># save all input parameters needed for level set methods as a dict</span>
+        <span class="n">image_paras</span> <span class="o">=</span> <span class="n">set_image_paras</span><span class="p">(</span><span class="n">no_data</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">min_depth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+
+        <span class="c1"># execute level set methods</span>
+        <span class="n">out_obj</span><span class="p">,</span> <span class="n">dep_list</span> <span class="o">=</span> <span class="n">levelSet</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">region_id</span><span class="p">,</span> <span class="n">obj_uid</span><span class="p">,</span> <span class="n">image_paras</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="n">dep_list</span><span class="p">:</span>
+            <span class="n">global_dep_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dep</span><span class="p">)</span>
+
+        <span class="n">obj_uid</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dep_list</span><span class="p">)</span>
+
+        <span class="n">level_obj</span> <span class="o">=</span> <span class="n">obj_to_level</span><span class="p">(</span><span class="n">out_obj</span><span class="p">,</span> <span class="n">global_dep_list</span><span class="p">)</span>
+        <span class="n">obj_image</span> <span class="o">=</span> <span class="n">writeObject</span><span class="p">(</span><span class="n">obj_image</span><span class="p">,</span> <span class="n">out_obj</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>       <span class="c1"># write region to whole image</span>
+        <span class="n">level_image</span> <span class="o">=</span> <span class="n">writeObject</span><span class="p">(</span><span class="n">level_image</span><span class="p">,</span> <span class="n">level_obj</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+
+        <span class="k">del</span> <span class="n">out_obj</span><span class="p">,</span> <span class="n">level_obj</span><span class="p">,</span> <span class="n">region</span>
+
+    <span class="k">del</span> <span class="n">regions</span><span class="p">,</span> <span class="n">label_objects</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========== Run time statistics =========== &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(rows, cols):</span><span class="se">\t\t\t</span><span class="s2"> </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rows_cols</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pixel resolution:</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{0}</span><span class="s2"> m&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resolution</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of regions:</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nb_labels</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data preparation time:</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prep_time</span> <span class="o">-</span> <span class="n">init_time</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Identify level time:</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">identify_time</span><span class="p">))</span>
+
+    <span class="n">write_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="c1"># writeRaster(obj_image, out_obj_file, in_sink)</span>
+    <span class="c1"># writeRaster(level_image, out_level_file, in_sink)</span>
+    <span class="c1"># SaveGDAL function can only save data as floating point</span>
+    <span class="n">level_image</span> <span class="o">=</span> <span class="n">np2rdarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">level_image</span><span class="p">),</span> <span class="n">no_data_raw</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_level_file</span><span class="p">,</span> <span class="n">level_image</span><span class="p">)</span>
+    <span class="n">obj_image</span> <span class="o">=</span> <span class="n">np2rdarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">obj_image</span><span class="p">),</span> <span class="n">no_data_raw</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">)</span>
+    <span class="n">rd</span><span class="o">.</span><span class="n">SaveGDAL</span><span class="p">(</span><span class="n">out_obj_file</span><span class="p">,</span> <span class="n">obj_image</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Write image time:</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">write_time</span><span class="p">))</span>
+
+    <span class="c1"># converting object image to polygon</span>
+    <span class="n">level_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">polygonize</span><span class="p">(</span><span class="n">out_obj_file</span><span class="p">,</span> <span class="n">out_vec_file</span><span class="p">)</span>
+    <span class="n">write_dep_csv</span><span class="p">(</span><span class="n">global_dep_list</span><span class="p">,</span> <span class="n">out_csv_file</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polygonize time:</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">level_time</span><span class="p">))</span>
+
+    <span class="c1"># extracting polygons for each individual level</span>
+    <span class="k">if</span> <span class="n">bool_level_shp</span><span class="p">:</span>
+        <span class="n">level_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">extract_levels</span><span class="p">(</span><span class="n">level_image</span><span class="p">,</span> <span class="n">obj_image</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">out_img_dir</span><span class="p">,</span> <span class="n">out_shp_dir</span><span class="p">,</span> <span class="n">in_sink</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extract level time:</span><span class="se">\t\t</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">level_time</span><span class="p">))</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">out_img_dir</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">out_shp_dir</span><span class="p">)</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">out_img_dir</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">level_image</span>
+    <span class="k">del</span> <span class="n">obj_image</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total run time:</span><span class="se">\t\t\t</span><span class="s2"> </span><span class="si">{:.4f}</span><span class="s2"> s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">init_time</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out_obj_file</span><span class="p">,</span> <span class="n">out_level_file</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.extract_levels" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_levels</span><span class="p">(</span><span class="n">level_img</span><span class="p">,</span> <span class="n">obj_img</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">out_img_dir</span><span class="p">,</span> <span class="n">out_shp_dir</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">bool_comb</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.extract_levels" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Extracts individual level image.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>level_img</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the level image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>obj_img</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the object image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_size</code></td>
+        <td><code>int</code></td>
+        <td><p>The minimum number of pixels to be considered as a depression.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>no_data</code></td>
+        <td><code>float</code></td>
+        <td><p>The no_data value of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_img_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The output image directory.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_shp_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The output shapefile directory.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>template</code></td>
+        <td><code>str</code></td>
+        <td><p>The file path to the template image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>bool_comb</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to extract combined level image. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>The single level image, properties of region grouped level image, properties of region grouped object image.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_levels</span><span class="p">(</span><span class="n">level_img</span><span class="p">,</span> <span class="n">obj_img</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">out_img_dir</span><span class="p">,</span> <span class="n">out_shp_dir</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">bool_comb</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extracts individual level image.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        level_img (np.array): The numpy array containing the level image.</span>
+<span class="sd">        obj_img (np.array): The numpy array containing the object image.</span>
+<span class="sd">        min_size (int): The minimum number of pixels to be considered as a depression.</span>
+<span class="sd">        no_data (float): The no_data value of the image.</span>
+<span class="sd">        out_img_dir (str): The output image directory.</span>
+<span class="sd">        out_shp_dir (str): The output shapefile directory.</span>
+<span class="sd">        template (str): The file path to the template image.</span>
+<span class="sd">        bool_comb (bool, optional): Whether to extract combined level image. Defaults to False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: The single level image, properties of region grouped level image, properties of region grouped object image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">max_level</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">level_img</span><span class="p">))</span>
+    <span class="n">combined_images</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">single_images</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">level_img</span><span class="p">)</span>
+
+    <span class="n">digits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">max_level</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># determine the level number of output file name</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">img</span><span class="p">[(</span><span class="n">img</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">img</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">)</span> <span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">tmp_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">tmp_img</span><span class="p">[</span><span class="n">tmp_img</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">bool_comb</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># whether to extract combined level image</span>
+            <span class="n">combined_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">tmp_img</span><span class="p">))</span>
+            <span class="n">filename_combined</span> <span class="o">=</span> <span class="s2">&quot;Combined_level_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.tif&quot;</span>
+            <span class="n">out_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_shp_dir</span><span class="p">,</span> <span class="n">filename_combined</span><span class="p">)</span>
+            <span class="n">writeRaster</span><span class="p">(</span><span class="n">tmp_img</span><span class="p">,</span><span class="n">out_file</span><span class="p">,</span><span class="n">template</span><span class="p">)</span>
+
+        <span class="n">lbl_objects</span><span class="p">,</span> <span class="n">n_labels</span> <span class="o">=</span> <span class="n">regionGroup</span><span class="p">(</span><span class="n">tmp_img</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">)</span>
+        <span class="c1"># regs = measure.regionprops(lbl_objects, level_img, coordinates=&#39;xy&#39;)</span>
+        <span class="n">regs</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">regionprops</span><span class="p">(</span><span class="n">lbl_objects</span><span class="p">,</span> <span class="n">level_img</span><span class="p">)</span>
+        <span class="c1"># regs2 = measure.regionprops(lbl_objects, obj_img, coordinates=&#39;xy&#39;)</span>
+        <span class="n">regs2</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">regionprops</span><span class="p">(</span><span class="n">lbl_objects</span><span class="p">,</span> <span class="n">obj_img</span><span class="p">)</span>
+
+        <span class="n">sin_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">reg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regs</span><span class="p">):</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">regs2</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">min_intensity</span>
+            <span class="k">if</span> <span class="n">reg</span><span class="o">.</span><span class="n">max_intensity</span> <span class="o">&gt;=</span> <span class="n">i</span><span class="p">:</span>
+                <span class="n">bbox</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">bbox</span>
+                <span class="n">tmp_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">tmp_img</span><span class="p">[</span><span class="n">reg</span><span class="o">.</span><span class="n">image</span><span class="p">]</span> <span class="o">=</span> <span class="n">uid</span>
+                <span class="n">writeObject</span><span class="p">(</span><span class="n">sin_img</span><span class="p">,</span> <span class="n">tmp_img</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+
+        <span class="c1"># for reg in regs:</span>
+        <span class="c1">#     if reg.max_intensity &gt;= i:</span>
+        <span class="c1">#         bbox = reg.bbox</span>
+        <span class="c1">#         tmp_img = np.zeros(reg.image.shape)</span>
+        <span class="c1">#         tmp_img[reg.image] = i</span>
+        <span class="c1">#         writeObject(sin_img, tmp_img, bbox)</span>
+        <span class="k">del</span> <span class="n">tmp_img</span>
+        <span class="c1"># single_images.append(np.copy(sin_img))</span>
+        <span class="n">filename_single</span> <span class="o">=</span> <span class="s2">&quot;Single_level_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.shp&quot;</span>
+        <span class="n">out_shp_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_shp_dir</span><span class="p">,</span> <span class="n">filename_single</span><span class="p">)</span>
+
+        <span class="n">out_img_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_img_dir</span><span class="p">,</span> <span class="s2">&quot;tmp.tif&quot;</span><span class="p">)</span>
+        <span class="n">writeRaster</span><span class="p">(</span><span class="n">sin_img</span><span class="p">,</span> <span class="n">out_img_file</span><span class="p">,</span> <span class="n">template</span><span class="p">)</span>
+        <span class="n">polygonize</span><span class="p">(</span><span class="n">out_img_file</span><span class="p">,</span> <span class="n">out_shp_file</span><span class="p">)</span>
+        <span class="c1"># writeRaster(sin_img,out_file,template)</span>
+        <span class="k">del</span> <span class="n">sin_img</span><span class="p">,</span> <span class="n">regs</span><span class="p">,</span> <span class="n">regs2</span>
+
+    <span class="k">del</span> <span class="n">img</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.get_image_paras" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_image_paras</span><span class="p">(</span><span class="n">image_paras</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.get_image_paras" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets image parameters.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>image_paras</code></td>
+        <td><code>dict</code></td>
+        <td><p>The dictionary containing image parameters.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>A tuple containing no_data, min_size, min_depth, interval, resolution.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_image_paras</span><span class="p">(</span><span class="n">image_paras</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Gets image parameters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image_paras (dict): The dictionary containing image parameters.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing no_data, min_size, min_depth, interval, resolution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">no_data</span> <span class="o">=</span> <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;no_data&quot;</span><span class="p">]</span>
+    <span class="n">min_size</span> <span class="o">=</span> <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;min_size&quot;</span><span class="p">]</span>
+    <span class="n">min_depth</span> <span class="o">=</span> <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;min_depth&quot;</span><span class="p">]</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;interval&quot;</span><span class="p">]</span>
+    <span class="n">resolution</span> <span class="o">=</span> <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">min_depth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">resolution</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.get_min_max_nodata" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_min_max_nodata</span><span class="p">(</span><span class="n">image</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.get_min_max_nodata" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets the minimum, maximum, and no_data value of a numpy array.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>image</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the image. </p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>The minimum, maximum, and no_data value.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_min_max_nodata</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Gets the minimum, maximum, and no_data value of a numpy array.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image (np.array): The numpy array containing the image. </span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: The minimum, maximum, and no_data value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">max_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">nodata</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image</span><span class="p">)))</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># assign no data value</span>
+    <span class="n">image</span><span class="p">[</span><span class="n">image</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodata</span>  <span class="c1"># change no data value</span>
+    <span class="n">min_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">min_elev</span><span class="p">,</span> <span class="n">max_elev</span><span class="p">,</span> <span class="n">nodata</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.getMetadata" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">getMetadata</span><span class="p">(</span><span class="n">img</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.getMetadata" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets rdarray metadata.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img</code></td>
+        <td><code>rdarray</code></td>
+        <td><p>The richDEM array containing the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>no_data, projection, geotransform, cell_size</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">getMetadata</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Gets rdarray metadata.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img (rdarray): The richDEM array containing the image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: no_data, projection, geotransform, cell_size</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">no_data</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">no_data</span>
+    <span class="n">projection</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">projection</span>
+    <span class="n">geotransform</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">geotransform</span>
+    <span class="n">cell_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">geotransform</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">,</span> <span class="n">cell_size</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.img_to_shp" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">img_to_shp</span><span class="p">(</span><span class="n">in_img_dir</span><span class="p">,</span> <span class="n">out_shp_dir</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.img_to_shp" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Converts images in a selected folder to shapefiles</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>in_img_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The input iimage directory.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_shp_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The output shapefile directory. </p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">img_to_shp</span><span class="p">(</span><span class="n">in_img_dir</span><span class="p">,</span> <span class="n">out_shp_dir</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts images in a selected folder to shapefiles</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        in_img_dir (str): The input iimage directory.</span>
+<span class="sd">        out_shp_dir (str): The output shapefile directory. </span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">img_files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">in_img_dir</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">img_file</span> <span class="ow">in</span> <span class="n">img_files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">img_file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
+            <span class="n">img_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">in_img_dir</span><span class="p">,</span> <span class="n">img_file</span><span class="p">)</span>
+            <span class="n">shp_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_shp_dir</span><span class="p">,</span> <span class="n">img_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;tif&quot;</span><span class="p">,</span> <span class="s2">&quot;shp&quot;</span><span class="p">))</span>
+            <span class="n">polygonize</span><span class="p">(</span><span class="n">img_filename</span><span class="p">,</span> <span class="n">shp_filename</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.levelSet" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">levelSet</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">region_id</span><span class="p">,</span> <span class="n">obj_uid</span><span class="p">,</span> <span class="n">image_paras</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.levelSet" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Identifies nested depressions using level-set method.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>region_id</code></td>
+        <td><code>int</code></td>
+        <td><p>The unique id of the region.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>obj_uid</code></td>
+        <td><code>int</code></td>
+        <td><p>The object id of the region.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>image_paras</code></td>
+        <td><code>dict</code></td>
+        <td><p>The dictionary containing image parameters.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>(level image, depression list)</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">levelSet</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">region_id</span><span class="p">,</span> <span class="n">obj_uid</span><span class="p">,</span> <span class="n">image_paras</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Identifies nested depressions using level-set method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img (np.array): The numpy array containing the image.</span>
+<span class="sd">        region_id (int): The unique id of the region.</span>
+<span class="sd">        obj_uid (int): The object id of the region.</span>
+<span class="sd">        image_paras (dict): The dictionary containing image parameters.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: (level image, depression list)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># unzip input parameters from dict</span>
+    <span class="n">no_data</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">min_depth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="n">get_image_paras</span><span class="p">(</span><span class="n">image_paras</span><span class="p">)</span>
+
+    <span class="n">level_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>     <span class="c1"># init output level image</span>
+    <span class="c1"># flood_img = np.zeros(img.shape)     # init output flood time image</span>
+
+    <span class="n">max_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">img</span><span class="p">[</span><span class="n">img</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">no_data</span>
+    <span class="n">min_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processing Region # </span><span class="si">{}</span><span class="s2"> ...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region_id</span><span class="p">))</span>
+    <span class="c1"># print(&quot;=========================================================================== Region: {}&quot;.format(region_id))</span>
+    <span class="n">unique_id</span> <span class="o">=</span> <span class="n">obj_uid</span>
+    <span class="n">parent_ids</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># store current parent depressions</span>
+    <span class="n">nbr_ids</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># store the inner-neighbor ids of current parent depressions</span>
+    <span class="n">dep_list</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># list for storing depressions</span>
+    <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">rows</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">cols</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>      <span class="c1"># if the depression is a horizontal or vertical line</span>
+        <span class="n">cells</span> <span class="o">=</span> <span class="n">rows</span> <span class="o">*</span> <span class="n">cols</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">cells</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># depression size</span>
+        <span class="n">max_depth</span> <span class="o">=</span> <span class="n">max_elev</span> <span class="o">-</span> <span class="n">min_elev</span>
+        <span class="n">mean_depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_elev</span> <span class="o">*</span> <span class="n">cells</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">img</span><span class="p">))</span> <span class="o">/</span> <span class="n">cells</span>
+        <span class="n">volume</span> <span class="o">=</span> <span class="n">mean_depth</span> <span class="o">*</span> <span class="n">cells</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">unique_id</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">perimeter</span> <span class="o">=</span> <span class="n">cells</span> <span class="o">*</span> <span class="n">resolution</span>
+        <span class="n">major_axis</span> <span class="o">=</span> <span class="n">cells</span> <span class="o">*</span> <span class="n">resolution</span>
+        <span class="n">minor_axis</span> <span class="o">=</span> <span class="n">resolution</span>
+        <span class="n">area_bbox_ratio</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">rows</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">elongatedness</span> <span class="o">=</span> <span class="n">cols</span>
+            <span class="n">eccentricity</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">orientation</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">elongatedness</span> <span class="o">=</span> <span class="n">rows</span>
+            <span class="n">eccentricity</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">orientation</span> <span class="o">=</span> <span class="mi">90</span>
+
+        <span class="n">dep_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Depression</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">mean_depth</span><span class="p">,</span> <span class="n">max_depth</span><span class="p">,</span> <span class="n">min_elev</span><span class="p">,</span> <span class="n">max_elev</span><span class="p">,</span> <span class="p">[],</span>
+                                   <span class="n">region_id</span><span class="p">,</span> <span class="n">perimeter</span><span class="p">,</span> <span class="n">major_axis</span><span class="p">,</span> <span class="n">minor_axis</span><span class="p">,</span> <span class="n">elongatedness</span><span class="p">,</span> <span class="n">eccentricity</span><span class="p">,</span>
+                                   <span class="n">orientation</span><span class="p">,</span> <span class="n">area_bbox_ratio</span><span class="p">))</span>
+        <span class="n">level_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">img</span>
+        <span class="k">return</span> <span class="n">level_img</span><span class="p">,</span> <span class="n">dep_list</span>
+
+    <span class="k">for</span> <span class="n">elev</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">max_elev</span><span class="p">,</span> <span class="n">min_elev</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>  <span class="c1"># slicing operation using top-down approach</span>
+        <span class="n">img</span><span class="p">[</span><span class="n">img</span> <span class="o">&gt;</span> <span class="n">elev</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># set elevation higher than xy-plane to zero</span>
+        <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span> <span class="o">=</span> <span class="n">regionGroup</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">)</span>
+        <span class="c1"># print(&#39;slicing elev = {:.2f}, number of objects = {}&#39;.format(elev, nb_labels))</span>
+        <span class="k">if</span> <span class="n">nb_labels</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1"># if slicing results in no objects, quit</span>
+            <span class="k">break</span>
+
+        <span class="c1"># objects = measure.regionprops(label_objects, img, coordinates=&#39;xy&#39;)</span>
+        <span class="n">objects</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">regionprops</span><span class="p">(</span><span class="n">label_objects</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="nb">object</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">objects</span><span class="p">):</span>
+            <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># get a boundary cell</span>
+            <span class="n">bbox</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">bbox</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parent_ids</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># This is the first depression, maximum depression</span>
+                <span class="c1"># print(&quot;This is the maximum depression extent.&quot;)</span>
+                <span class="n">cells</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">area</span>
+                <span class="n">size</span> <span class="o">=</span> <span class="n">cells</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># depression size</span>
+                <span class="n">max_depth</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span> <span class="o">-</span> <span class="nb">object</span><span class="o">.</span><span class="n">min_intensity</span>  <span class="c1"># depression max depth</span>
+                <span class="n">mean_depth</span> <span class="o">=</span> <span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span> <span class="o">*</span> <span class="n">cells</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">intensity_image</span><span class="p">))</span> <span class="o">/</span> <span class="n">cells</span>  <span class="c1"># depression mean depth</span>
+                <span class="n">volume</span> <span class="o">=</span> <span class="n">mean_depth</span> <span class="o">*</span> <span class="n">cells</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># depression volume</span>
+                <span class="c1"># spill_elev = object.max_intensity   # to be implemented</span>
+                <span class="n">min_elev</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">min_intensity</span>   <span class="c1"># depression min elevation</span>
+                <span class="n">max_elev</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span>     <span class="c1"># depression max elevation</span>
+                <span class="c1"># print(&quot;size = {}, max depth = {:.2f}, mean depth = {:.2f}, volume = {:.2f}, spill elev = {:.2f}&quot;.format(</span>
+                <span class="c1">#     size, max_depth, mean_depth, volume, spill_elev))</span>
+                <span class="n">unique_id</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">perimeter</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">perimeter</span> <span class="o">*</span> <span class="n">resolution</span>
+                <span class="n">major_axis</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">major_axis_length</span> <span class="o">*</span> <span class="n">resolution</span>
+                <span class="n">minor_axis</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">minor_axis_length</span> <span class="o">*</span> <span class="n">resolution</span>
+                <span class="k">if</span> <span class="n">minor_axis</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">minor_axis</span> <span class="o">=</span> <span class="n">resolution</span>
+                <span class="n">elongatedness</span> <span class="o">=</span> <span class="n">major_axis</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">minor_axis</span>
+                <span class="n">eccentricity</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">eccentricity</span>
+                <span class="n">orientation</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">orientation</span> <span class="o">/</span> <span class="mf">3.1415</span> <span class="o">*</span> <span class="mi">180</span>
+                <span class="n">area_bbox_ratio</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">extent</span>
+                <span class="n">dep_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Depression</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span><span class="n">level</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span><span class="n">size</span><span class="p">,</span><span class="n">volume</span><span class="p">,</span><span class="n">mean_depth</span><span class="p">,</span><span class="n">max_depth</span><span class="p">,</span><span class="n">min_elev</span><span class="p">,</span><span class="n">max_elev</span><span class="p">,[],</span>
+                                           <span class="n">region_id</span><span class="p">,</span> <span class="n">perimeter</span><span class="p">,</span> <span class="n">major_axis</span><span class="p">,</span> <span class="n">minor_axis</span><span class="p">,</span> <span class="n">elongatedness</span><span class="p">,</span> <span class="n">eccentricity</span><span class="p">,</span>
+                                           <span class="n">orientation</span><span class="p">,</span> <span class="n">area_bbox_ratio</span><span class="p">))</span>
+                <span class="n">parent_ids</span><span class="p">[</span><span class="n">unique_id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># number of inner neighbors</span>
+                <span class="n">nbr_ids</span><span class="p">[</span><span class="n">unique_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># ids of inner neighbors</span>
+                <span class="n">tmp_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">tmp_img</span><span class="p">[</span><span class="nb">object</span><span class="o">.</span><span class="n">image</span><span class="p">]</span> <span class="o">=</span> <span class="n">unique_id</span>
+                <span class="n">writeObject</span><span class="p">(</span><span class="n">level_img</span><span class="p">,</span> <span class="n">tmp_img</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>  <span class="c1"># write the object to the final image</span>
+
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># identify inner neighbors of parent depressions</span>
+                <span class="c1"># print(&quot;current id: {}&quot;.format(parent_ids.keys()))</span>
+                <span class="c1"># (row, col) = object.coords[0]</span>
+                <span class="n">parent_id</span> <span class="o">=</span> <span class="n">level_img</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">]</span>
+                <span class="n">parent_ids</span><span class="p">[</span><span class="n">parent_id</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">nbr_ids</span><span class="p">[</span><span class="n">parent_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parent_ids</span><span class="o">.</span><span class="n">copy</span><span class="p">():</span>  <span class="c1"># check how many inner neighbors each upper level depression has</span>
+            <span class="k">if</span> <span class="n">parent_ids</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># if the parent has two or more children</span>
+                <span class="c1"># print(&quot;Object id: {} has split into {} objects&quot;.format(key, parent_ids[key]))</span>
+                <span class="n">new_parent_keys</span> <span class="o">=</span> <span class="n">nbr_ids</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">new_key</span> <span class="ow">in</span> <span class="n">new_parent_keys</span><span class="p">:</span>
+                    <span class="nb">object</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[</span><span class="n">new_key</span><span class="p">]</span>
+                    <span class="n">cells</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">area</span>
+                    <span class="n">size</span> <span class="o">=</span> <span class="n">cells</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                    <span class="n">max_depth</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span> <span class="o">-</span> <span class="nb">object</span><span class="o">.</span><span class="n">min_intensity</span>
+                    <span class="n">mean_depth</span> <span class="o">=</span> <span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span> <span class="o">*</span> <span class="n">cells</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">intensity_image</span><span class="p">))</span> <span class="o">/</span> <span class="n">cells</span>
+                    <span class="n">volume</span> <span class="o">=</span> <span class="n">mean_depth</span> <span class="o">*</span> <span class="n">cells</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                    <span class="n">spill_elev</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span>
+                    <span class="n">min_elev</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">min_intensity</span>
+                    <span class="n">max_elev</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">max_intensity</span>
+                    <span class="c1"># print(&quot;  --  size = {}, max depth = {:.2f}, mean depth = {:.2f}, volume = {:.2f}, spill elev = {:.2f}&quot;.format(</span>
+                    <span class="c1">#         size, max_depth, mean_depth, volume, spill_elev))</span>
+                    <span class="n">unique_id</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="n">perimeter</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">perimeter</span> <span class="o">*</span> <span class="n">resolution</span>
+                    <span class="n">major_axis</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">major_axis_length</span> <span class="o">*</span> <span class="n">resolution</span>
+                    <span class="n">minor_axis</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">minor_axis_length</span> <span class="o">*</span> <span class="n">resolution</span>
+                    <span class="k">if</span> <span class="n">minor_axis</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">minor_axis</span> <span class="o">=</span> <span class="n">resolution</span>
+                    <span class="n">elongatedness</span> <span class="o">=</span> <span class="n">major_axis</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">minor_axis</span>
+                    <span class="n">eccentricity</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">eccentricity</span>
+                    <span class="n">orientation</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">orientation</span> <span class="o">/</span> <span class="mf">3.1415</span> <span class="o">*</span> <span class="mi">180</span>
+                    <span class="n">area_bbox_ratio</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">extent</span>
+                    <span class="n">dep_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="n">Depression</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">mean_depth</span><span class="p">,</span> <span class="n">max_depth</span><span class="p">,</span> <span class="n">min_elev</span><span class="p">,</span> <span class="n">max_elev</span><span class="p">,</span> <span class="p">[],</span>
+                                   <span class="n">region_id</span><span class="p">,</span> <span class="n">perimeter</span><span class="p">,</span> <span class="n">major_axis</span><span class="p">,</span> <span class="n">minor_axis</span><span class="p">,</span> <span class="n">elongatedness</span><span class="p">,</span> <span class="n">eccentricity</span><span class="p">,</span>
+                                   <span class="n">orientation</span><span class="p">,</span> <span class="n">area_bbox_ratio</span><span class="p">))</span>
+                    <span class="n">dep_list</span><span class="p">[</span><span class="n">key</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">obj_uid</span><span class="p">]</span><span class="o">.</span><span class="n">inNbrId</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">unique_id</span><span class="p">)</span>
+                    <span class="n">parent_ids</span><span class="p">[</span><span class="n">unique_id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">nbr_ids</span><span class="p">[</span><span class="n">unique_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="n">bbox</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">bbox</span>
+                    <span class="n">tmp_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                    <span class="n">tmp_img</span><span class="p">[</span><span class="nb">object</span><span class="o">.</span><span class="n">image</span><span class="p">]</span> <span class="o">=</span> <span class="n">unique_id</span>
+                    <span class="n">writeObject</span><span class="p">(</span><span class="n">level_img</span><span class="p">,</span> <span class="n">tmp_img</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parent_ids</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>    <span class="c1"># remove parent id that has split</span>
+                    <span class="n">parent_ids</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">parent_ids</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># if a parent depression has not split, keep it</span>
+                <span class="n">nbr_ids</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># for dep in dep_list:</span>
+    <span class="c1">#     print(&quot;id: {} has children {}&quot;.format(dep.id, dep.inNbrId))</span>
+    <span class="n">dep_list</span> <span class="o">=</span> <span class="n">updateLevel</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">obj_uid</span><span class="p">)</span>   <span class="c1"># update the inner neighbors of each depression</span>
+    <span class="c1"># for dep in dep_list:</span>
+    <span class="c1">#     print(&quot;id: {} is level {}&quot;.format(dep.id, dep.level))</span>
+    <span class="k">del</span> <span class="n">img</span>
+
+    <span class="k">return</span> <span class="n">level_img</span><span class="p">,</span> <span class="n">dep_list</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.np2rdarray" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">np2rdarray</span><span class="p">(</span><span class="n">in_array</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.np2rdarray" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Converts numpy array to rdarray.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>in_array</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The input numpy array containing the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>no_data</code></td>
+        <td><code>float</code></td>
+        <td><p>The no_data value of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>projection</code></td>
+        <td><code>str</code></td>
+        <td><p>The projection coordinate system of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>geotransform</code></td>
+        <td><code>str</code></td>
+        <td><p>The geotransform of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>rdarray</code></td>
+      <td><p>The richDEM array containing the image.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">np2rdarray</span><span class="p">(</span><span class="n">in_array</span><span class="p">,</span> <span class="n">no_data</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">geotransform</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts numpy array to rdarray.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        in_array (np.array): The input numpy array containing the image.</span>
+<span class="sd">        no_data (float): The no_data value of the image.</span>
+<span class="sd">        projection (str): The projection coordinate system of the image.</span>
+<span class="sd">        geotransform (str): The geotransform of the image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        rdarray: The richDEM array containing the image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">out_array</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">rdarray</span><span class="p">(</span><span class="n">in_array</span><span class="p">,</span> <span class="n">no_data</span><span class="o">=</span><span class="n">no_data</span><span class="p">)</span>
+    <span class="n">out_array</span><span class="o">.</span><span class="n">projection</span> <span class="o">=</span> <span class="n">projection</span>
+    <span class="n">out_array</span><span class="o">.</span><span class="n">geotransform</span> <span class="o">=</span> <span class="n">geotransform</span>
+    <span class="k">return</span> <span class="n">out_array</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.obj_to_level" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">obj_to_level</span><span class="p">(</span><span class="n">obj_img</span><span class="p">,</span> <span class="n">dep_list</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.obj_to_level" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Derives depression level image based on the depression id image and depression list.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>obj_img</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the object image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>dep_list</code></td>
+        <td><code>list</code></td>
+        <td><p>A list containing depression info.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>np.array</code></td>
+      <td><p>The numpy array containing the object level image.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">obj_to_level</span><span class="p">(</span><span class="n">obj_img</span><span class="p">,</span> <span class="n">dep_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Derives depression level image based on the depression id image and depression list.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        obj_img (np.array): The numpy array containing the object image.</span>
+<span class="sd">        dep_list (list): A list containing depression info.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array: The numpy array containing the object level image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">level_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">obj_img</span><span class="p">)</span>
+
+    <span class="n">max_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">level_img</span><span class="p">))</span>
+    <span class="c1"># print(&quot;max id = &quot; + str(max_id))</span>
+    <span class="k">if</span> <span class="n">max_id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">min_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">level_img</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">level_img</span><span class="p">)]))</span>
+        <span class="c1"># print(&quot;min_id = &quot; + str(min_id))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_id</span><span class="p">,</span> <span class="n">max_id</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">level_img</span><span class="p">[</span><span class="n">level_img</span> <span class="o">==</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep_list</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">level</span> <span class="o">+</span> <span class="n">max_id</span>
+    <span class="n">level_img</span> <span class="o">=</span> <span class="n">level_img</span> <span class="o">-</span> <span class="n">max_id</span>
+
+    <span class="k">return</span> <span class="n">level_img</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.polygonize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">polygonize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">shp_path</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.polygonize" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Converts a raster image to vector.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the input image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>shp_path</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the output shapefile.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">polygonize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">shp_path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts a raster image to vector.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img (str): File path to the input image.</span>
+<span class="sd">        shp_path (str): File path to the output shapefile.</span>
+<span class="sd">    &quot;&quot;&quot;</span>      
+    <span class="c1"># mapping between gdal type and ogr field type</span>
+    <span class="n">type_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_UInt16</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Int16</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_UInt32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Int32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CInt16</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CInt32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTInteger</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CFloat32</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">,</span>
+                    <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CFloat64</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">OFTReal</span><span class="p">}</span>
+
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">prj</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">()</span>
+    <span class="n">srcband</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dst_layername</span> <span class="o">=</span> <span class="s2">&quot;Shape&quot;</span>
+    <span class="n">drv</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s2">&quot;ESRI Shapefile&quot;</span><span class="p">)</span>
+    <span class="n">dst_ds</span> <span class="o">=</span> <span class="n">drv</span><span class="o">.</span><span class="n">CreateDataSource</span><span class="p">(</span><span class="n">shp_path</span><span class="p">)</span>
+    <span class="n">srs</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="n">wkt</span><span class="o">=</span><span class="n">prj</span><span class="p">)</span>
+
+    <span class="n">dst_layer</span> <span class="o">=</span> <span class="n">dst_ds</span><span class="o">.</span><span class="n">CreateLayer</span><span class="p">(</span><span class="n">dst_layername</span><span class="p">,</span> <span class="n">srs</span><span class="o">=</span><span class="n">srs</span><span class="p">)</span>
+    <span class="n">raster_field</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">FieldDefn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">type_mapping</span><span class="p">[</span><span class="n">srcband</span><span class="o">.</span><span class="n">DataType</span><span class="p">])</span>
+    <span class="n">dst_layer</span><span class="o">.</span><span class="n">CreateField</span><span class="p">(</span><span class="n">raster_field</span><span class="p">)</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">Polygonize</span><span class="p">(</span><span class="n">srcband</span><span class="p">,</span> <span class="n">srcband</span><span class="p">,</span> <span class="n">dst_layer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[],</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">img</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">srcband</span><span class="p">,</span> <span class="n">dst_ds</span><span class="p">,</span> <span class="n">dst_layer</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.regionGroup" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">regionGroup</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.regionGroup" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>IdentifIies regions based on region growing method</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img_array</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_size</code></td>
+        <td><code>int</code></td>
+        <td><p>The minimum number of pixels to be considered as a depression.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>no_data</code></td>
+        <td><code>float</code></td>
+        <td><p>The no_data value of the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tuple</code></td>
+      <td><p>The labelled objects and total number of labels. </p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">regionGroup</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">no_data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;IdentifIies regions based on region growing method</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img_array (np.array): The numpy array containing the image.</span>
+<span class="sd">        min_size (int): The minimum number of pixels to be considered as a depression.</span>
+<span class="sd">        no_data (float): The no_data value of the image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: The labelled objects and total number of labels. </span>
+<span class="sd">    &quot;&quot;&quot;</span>       
+    <span class="n">img_array</span><span class="p">[</span><span class="n">img_array</span> <span class="o">==</span> <span class="n">no_data</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">label_objects</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+    <span class="n">mask_sizes</span> <span class="o">=</span> <span class="n">sizes</span> <span class="o">&gt;</span> <span class="n">min_size</span>
+    <span class="n">mask_sizes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">image_cleaned</span> <span class="o">=</span> <span class="n">mask_sizes</span><span class="p">[</span><span class="n">label_objects</span><span class="p">]</span>
+    <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">image_cleaned</span><span class="p">)</span>
+    <span class="c1"># nb_labels is the total number of objects. 0 represents background object.</span>
+    <span class="k">return</span> <span class="n">label_objects</span><span class="p">,</span> <span class="n">nb_labels</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.set_image_paras" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_image_paras</span><span class="p">(</span><span class="n">no_data</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">min_depth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.set_image_paras" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Sets the input image parameters for level-set method.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>no_data</code></td>
+        <td><code>float</code></td>
+        <td><p>The no_data value of the input DEM.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_size</code></td>
+        <td><code>int</code></td>
+        <td><p>The minimum nuber of pixels to be considered as a depressioin.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>min_depth</code></td>
+        <td><code>float</code></td>
+        <td><p>The minimum depth to be considered as a depression.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>interval</code></td>
+        <td><code>float</code></td>
+        <td><p>The slicing interval.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>resolution</code></td>
+        <td><code>float</code></td>
+        <td><p>The spatial resolution of the DEM.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>A dictionary containing image parameters.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_image_paras</span><span class="p">(</span><span class="n">no_data</span><span class="p">,</span> <span class="n">min_size</span><span class="p">,</span> <span class="n">min_depth</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the input image parameters for level-set method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        no_data (float): The no_data value of the input DEM.</span>
+<span class="sd">        min_size (int): The minimum nuber of pixels to be considered as a depressioin.</span>
+<span class="sd">        min_depth (float): The minimum depth to be considered as a depression.</span>
+<span class="sd">        interval (float): The slicing interval.</span>
+<span class="sd">        resolution (float): The spatial resolution of the DEM.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary containing image parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">image_paras</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;no_data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">no_data</span>
+    <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;min_size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">min_size</span>
+    <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;min_depth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">min_depth</span>
+    <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;interval&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">interval</span>
+    <span class="n">image_paras</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">resolution</span>
+    <span class="k">return</span> <span class="n">image_paras</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.updateLevel" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">updateLevel</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">obj_uid</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.updateLevel" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Updates the inner neighbors of each depression.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>dep_list</code></td>
+        <td><code>list</code></td>
+        <td><p>A list containing depression info.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>obj_uid</code></td>
+        <td><code>int</code></td>
+        <td><p>The unique id of an object.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>list</code></td>
+      <td><p>A list containing depression info.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">updateLevel</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">obj_uid</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Updates the inner neighbors of each depression.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dep_list (list): A list containing depression info.</span>
+<span class="sd">        obj_uid (int): The unique id of an object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list containing depression info.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">dep_list</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dep</span><span class="o">.</span><span class="n">inNbrId</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">max_children_level</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">dep</span><span class="o">.</span><span class="n">inNbrId</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">dep_list</span><span class="p">[</span><span class="nb">id</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">obj_uid</span><span class="p">]</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;</span> <span class="n">max_children_level</span><span class="p">:</span>
+                    <span class="n">max_children_level</span> <span class="o">=</span> <span class="n">dep_list</span><span class="p">[</span><span class="nb">id</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">obj_uid</span><span class="p">]</span><span class="o">.</span><span class="n">level</span>
+            <span class="n">dep</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">max_children_level</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">dep_list</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.write_dep_csv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">write_dep_csv</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">csv_file</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.write_dep_csv" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Saves the depression list to a CSV file.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>dep_list</code></td>
+        <td><code>list</code></td>
+        <td><p>A list containing depression info. </p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>csv_file</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the output CSV file.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">write_dep_csv</span><span class="p">(</span><span class="n">dep_list</span><span class="p">,</span> <span class="n">csv_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Saves the depression list to a CSV file.</span>
+
+
+<span class="sd">    Args:</span>
+<span class="sd">        dep_list (list): A list containing depression info. </span>
+<span class="sd">        csv_file (str): File path to the output CSV file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">csv</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;id&quot;</span> <span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;level&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;count&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;area&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;volume&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;avg-depth&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;max-depth&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span>\
+             <span class="s2">&quot;min-elev&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;max-elev&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;children-id&quot;</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="s2">&quot;region-id&quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="s2">&quot;perimeter&quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="s2">&quot;major-axis&quot;</span> <span class="o">+</span> \
+             <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="s2">&quot;minor-axis&quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="s2">&quot;elongatedness&quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="s2">&quot;eccentricity&quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="s2">&quot;orientation&quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> \
+             <span class="s2">&quot;area-bbox-ratio&quot;</span>
+    <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">header</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">dep</span> <span class="ow">in</span> <span class="n">dep_list</span><span class="p">:</span>
+        <span class="c1"># id, level, size, volume, meanDepth, maxDepth, minElev, bndElev, inNbrId, nbrId = 0</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,&quot;</span> \
+               <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dep</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">volume</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">meanDepth</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">maxDepth</span><span class="p">,</span>
+                               <span class="n">dep</span><span class="o">.</span><span class="n">minElev</span><span class="p">,</span><span class="n">dep</span><span class="o">.</span><span class="n">bndElev</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dep</span><span class="o">.</span><span class="n">inNbrId</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">),</span> <span class="n">dep</span><span class="o">.</span><span class="n">regionId</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">perimeter</span><span class="p">,</span>
+                               <span class="n">dep</span><span class="o">.</span><span class="n">major_axis</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">minor_axis</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">elongatedness</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">eccentricity</span><span class="p">,</span> <span class="n">dep</span><span class="o">.</span><span class="n">orientation</span><span class="p">,</span>
+                               <span class="n">dep</span><span class="o">.</span><span class="n">area_bbox_ratio</span><span class="p">)</span>
+        <span class="n">csv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">csv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.writeObject" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">writeObject</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">obj_array</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.writeObject" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Writes depression objects to the original image.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img_array</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The output image array.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>obj_array</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing depression objects.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>bbox</code></td>
+        <td><code>list</code></td>
+        <td><p>The bounding box of the depression object.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>np.array</code></td>
+      <td><p>The numpy array containing the depression objects.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">writeObject</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">obj_array</span><span class="p">,</span> <span class="n">bbox</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Writes depression objects to the original image.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img_array (np.array): The output image array.</span>
+<span class="sd">        obj_array (np.array): The numpy array containing depression objects.</span>
+<span class="sd">        bbox (list): The bounding box of the depression object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array: The numpy array containing the depression objects.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="n">min_row</span><span class="p">,</span> <span class="n">min_col</span><span class="p">,</span> <span class="n">max_row</span><span class="p">,</span> <span class="n">max_col</span> <span class="o">=</span> <span class="n">bbox</span>
+    <span class="n">roi</span> <span class="o">=</span> <span class="n">img_array</span><span class="p">[</span><span class="n">min_row</span><span class="p">:</span><span class="n">max_row</span><span class="p">,</span> <span class="n">min_col</span><span class="p">:</span><span class="n">max_col</span><span class="p">]</span>
+    <span class="n">roi</span><span class="p">[</span><span class="n">obj_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj_array</span><span class="p">[</span><span class="n">obj_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">img_array</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="lidar.slicing.writeRaster" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">writeRaster</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">template</span><span class="p">)</span></code>
+
+
+<a href="#lidar.slicing.writeRaster" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Saves an numpy array as a GeoTIFF.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>arr</code></td>
+        <td><code>np.array</code></td>
+        <td><p>The numpy array containing the image.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_path</code></td>
+        <td><code>str</code></td>
+        <td><p>The file path to the output GeoTIFF.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>template</code></td>
+        <td><code>str</code></td>
+        <td><p>The file path to the template image containing projection info. </p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>np.array</code></td>
+      <td><p>The numpy array containing the image.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>lidar/slicing.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">writeRaster</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">out_path</span><span class="p">,</span> <span class="n">template</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Saves an numpy array as a GeoTIFF.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arr (np.array): The numpy array containing the image.</span>
+<span class="sd">        out_path (str): The file path to the output GeoTIFF.</span>
+<span class="sd">        template (str): The file path to the template image containing projection info. </span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array: The numpy array containing the image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">no_data</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># First of all, gather some information from the template file</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">trans</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">()</span>
+    <span class="c1"># nodatav = 0 #data.GetNoDataValue()</span>
+    <span class="c1"># Create the file, using the information from the template file</span>
+    <span class="n">outdriver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s2">&quot;GTiff&quot;</span><span class="p">)</span>
+    <span class="c1"># http://www.gdal.org/gdal_8h.html</span>
+    <span class="c1"># GDT_Byte = 1, GDT_UInt16 = 2, GDT_UInt32 = 4, GDT_Int32 = 5, GDT_Float32 = 6,</span>
+    <span class="n">outdata</span>   <span class="o">=</span> <span class="n">outdriver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_path</span><span class="p">),</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_UInt32</span><span class="p">)</span>
+    <span class="c1"># Write the array to the file, which is the original array in this example</span>
+    <span class="n">outdata</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="c1"># Set a no data value if required</span>
+    <span class="n">outdata</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">SetNoDataValue</span><span class="p">(</span><span class="n">no_data</span><span class="p">)</span>
+    <span class="c1"># Georeference the image</span>
+    <span class="n">outdata</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">trans</span><span class="p">)</span>
+    <span class="c1"># Write projection information</span>
+    <span class="n">outdata</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span><span class="n">proj</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arr</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2021-03-02
+    
+  </small>
+</div>
+                  
+                
+              
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../mounts/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              mounts module
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../utilities/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              utilities module
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      
+    
+  </body>
+</html>
